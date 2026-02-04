@@ -49,10 +49,10 @@ def collect_constraints(tier_data, profile, phase_data):
     if not language.get("allow_questions", True):
         constraints.append("- No questions")
 
-    if forbidden:
-        constraints.append(
-            "- Do NOT use these words: " + ", ".join(forbidden)
-        )
+    # if forbidden:
+    #     constraints.append(
+    #         "- Do NOT use these words: " + ", ".join(forbidden)
+    #     )
 
     # Profile surface constraints
     surface = profile.get("surface_constraints", {})
@@ -70,14 +70,15 @@ def collect_constraints(tier_data, profile, phase_data):
         )
 
     # Phase constraints
-    phase_surface = phase_data.get("surface_constraints", {})
-    if phase_surface.get("forbid_internal_states_of_others"):
-        constraints.append("- Do not describe thoughts or feelings of other characters")
+    if phase_data:
+        phase_surface = phase_data.get("surface_constraints", {})
+        if phase_surface.get("forbid_internal_states_of_others"):
+            constraints.append("- Do not describe thoughts or feelings of other characters")
 
-    if "allowed_actions" in phase_surface:
-        constraints.append(
-            "- Only describe these actions: " + ", ".join(phase_surface["allowed_actions"])
-        )
+        if "allowed_actions" in phase_surface:
+            constraints.append(
+                "- Only describe these actions: " + ", ".join(phase_surface["allowed_actions"])
+            )
 
     return constraints
 
@@ -95,13 +96,18 @@ def build_prompt(tier_data, profile, arc, skill, phase_data, name, location):
     constraints_text = "\n".join(constraints)
 
 
-    story_beats = arc.get("story_beats", [])
+    structure = arc.get("structure", [])
 
-    beats_text = ""
-    if story_beats:
-        beats_text = "STORY BEATS (in order):\n"
-        for beat in story_beats:
-            beats_text += f"- {beat}\n"
+    structure_text = ""
+    if structure:
+        structure_text = "STRUCTURE (in order):\n"
+        for step in structure:
+            structure_text += f"- {step}\n"
+
+
+    goal_text = ""
+    if arc["arc_type"] != "exposure":
+        goal_text = f"GOAL:\nShow a child learning to {phase_data['goal']}.\n"     
 
     prompt = f"""
 You are generating a short story for a machine learning dataset.
@@ -109,8 +115,7 @@ You are generating a short story for a machine learning dataset.
 TARGET AGE:
 Approximate age: {tier_data['approx_age']}
 
-GOAL:
-Show a child learning to {phase_data['goal']}.
+{goal_text}
 
 CHARACTER:
 - Main character: {name}
@@ -119,16 +124,10 @@ SETTING:
 - Location: {location}
 - Objects may include: {", ".join(arc.get("objects", []))}
 
-{beats_text}
+{structure_text}
 
 CONSTRAINTS:
 {constraints_text}
-
-STYLE RULES:
-- Use concrete, observable actions only
-- No explanations, morals, or lessons
-- Show confusion or awkwardness before improvement
-- End with simple emotional or practical resolution appropriate to age
 
 OUTPUT:
 Write only the story text.

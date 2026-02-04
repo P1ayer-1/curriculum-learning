@@ -19,30 +19,34 @@ def generate_prompts(
         tier_data = TIERS[tier]
         for profile in TIER_PROFILES[tier]:
             for arc in ARCS:
-                is_arc_compatible = check_arc_compatible(tier, arc) # should this be here or build prompt func?
+                is_arc_compatible = check_arc_compatible(tier, arc, tier_data) # should this be here or build prompt func?
 
                 if not is_arc_compatible:
                     continue
                 
-                skill = SKILLS[arc["skill"]]
+                skill = None
+                skill_phase = None
+                phase_data = None
 
-                skill_phase = arc["skill_phase"]
+                if arc["skill"]:
+                    skill = SKILLS[arc["skill"]]
 
-                phases = skill["phases"]
+                    skill_phase = arc["skill_phase"]
 
-                phase_data = {}
-                for phase in phases:
-                    if phase["phase"] == skill_phase:
-                        phase_data = phase
+                    phases = skill["phases"]
 
-                # Validate skill compatibility
-                is_compatible = check_capability_compatibility(
-                    phase_data,
-                    tier_data
-                )
+                    for phase in phases:
+                        if phase["phase"] == skill_phase:
+                            phase_data = phase
 
-                if not is_compatible:
-                    continue
+                    # Validate skill compatibility
+                    is_compatible = check_capability_compatibility(
+                        phase_data,
+                        tier_data
+                    )
+
+                    if not is_compatible:
+                        continue
 
 
                 for location in arc["locations"]:

@@ -32,9 +32,10 @@ def capability_constraints(tier):
     return "\n".join(lines)
 
 
-def check_capability_compatibility(skill, tier):
-    for cap, required in skill["requires_capabilities"].items():
+def check_capability_compatibility(phase, tier):
+    print("phase", phase)
+    print("tier", tier)
+    for cap, required in phase["requires_capabilities"].items():
         if required and not tier["capabilities"].get(cap, False):
-            raise ValueError(
-                f"Tier {tier['id']} lacks required capability: {cap}"
-            )
+            return False
+    return True

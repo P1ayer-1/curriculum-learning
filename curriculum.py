@@ -1,12 +1,5 @@
 # curriculum.py
 
-
-# "capabilities": {
-#     "abstract_reasoning": False, = No generalizations, theories, “why” explanations
-#     "planning": False, = No future-oriented multi-step plans
-#     "perspective_taking": True = Whether inner thoughts of others are allowed
-# },
-
 TIER_PROFILES = {
     0: [
         {

@@ -6,7 +6,6 @@ ARCS = [ # need func to check if compatible
         "skill": "counting",
         "skill_phase": "enumeration_small",
         "story_beats": ["conflict", "feedback", "adjustment"], # should adjust
-        "goal": "count objects correctly up to five",
         "locations": ["school", "home"],
         "min_tier": 1,
         "max_tier": 2
@@ -14,7 +13,6 @@ ARCS = [ # need func to check if compatible
 
     {
         "arc_id": "sharing",
-        "goal": "learn to share objects with another child",
         "skill": "social_interaction",
         "skill_phase": "co_presence",
         "story_beats": ["conflict", "feedback", "adjustment"],

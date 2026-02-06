@@ -1,19 +1,46 @@
 # exposures.py
+TONES = {
+    "curious": "The tone should show curiosity.",
+    "excited": "The tone should show excitement.",
+    "happy": "The tone should show happiness.",
+    "playful": "The tone should be playful.",
+    "encouraging": "The tone should be encouraging.",
+    "calm": "The tone should be calm and simple.",
+    "gentle": "The tone should show gentle effort and learning."
+}
+
+
+
 EXPOSURES = {
     "number_words": {
         "min_tier": 0,
         "max_tier": 0,
         "description": "rote number words", 
-        "exposure_goal": "rote number words"
+        "exposure_goal": "rote number words",
+        "lexicon": {
+            "nouns": ["ball", "block", "cup", "toy", "apple", "dog", "cat", "car"],
+            "verbs": ["see", "look", "have", "count", "hold"],
+            "adjectives": ["big", "small", "red", "blue"],
+            },
+        "tones": ["curious", "excited"],
+        "locations": ["home", "school"]
+
     },
 
     "object_categories": {
         "min_tier": 0,
         "max_tier": 1,
         "description": "animals, toys, foods",
-        "exposure_goal": "simple object categories such as: animals, toys and foods"
+        "exposure_goal": "simple object categories such as: animals, toys and foods",
+        "lexicon": {
+            "nouns": ["ball", "toy", "cup"],
+            "verbs": ["see", "hold"],
+            "adjectives": ["red", "big"],
+            "emotion_vocab": ["happy", "sad"]
+            },
+        "tones": ["curious", "excited", "happy", "playful", "encouraging"],
+        "locations": ["home", "school", "park", "car ride", "library"]
     },
-
     "time_words": {
         "min_tier": 0,
         "max_tier": 1,
@@ -75,5 +102,6 @@ EXPOSURES = {
         "max_tier": 2,
         "description": "basic safety awareness",
         "exposure_goal": "simple safety concepts such as hot vs cold, staying close to caregivers, and not touching dangerous objects"
-    }
+    },
+    
 }

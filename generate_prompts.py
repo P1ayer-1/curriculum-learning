@@ -1,66 +1,75 @@
 # generate_prompts.py
 
-from curriculum import TIERS, TIER_PROFILES
-from arcs import ARCS, check_arc_compatible
 from prompt_builder import build_prompt
-from skills import SKILLS
-from capabilities import check_capability_compatibility
 from names import get_name
-import sys
+from exposures import EXPOSURES, TONES
+import random
+import json
 
 
+def load_lexicon():
+    with open('D:\Tiny Models\Tiny Stories\lexicon.json') as f:
+        lexicon = json.load(f)
+    return lexicon
 
+FEATURES = {
+    "dialogue": "include dialogue",
+    "problem_and_solution": "include a problem and solution",
+    "moral_or_lesson": "include a moral or lesson",
+    "clear_structure": "include a clear beginning, middle, and end",
+    "repetition_for_emphasis": "include repetition for emphasis",
+    "sensory_details": "include sensory details",
+    "humor": "include humor",
+    "twist_or_surprise": "include a twist or surprise",
+    "positive_message": "include a positive message",
+}
+
+def sample_features(features: dict) -> dict:
+    k = random.randint(0, min(3, len(features)))
+    selected_keys = random.sample(list(features.keys()), k)
+    return {key: features[key] for key in selected_keys}
+
+def save_prompts(prompts, output_path):
+    with open(output_path, 'w') as f:
+        json.dump(prompts, f, indent=2)
 
 def generate_prompts(
+        num_prompts=100
 ):
     prompts = []
 
-    for tier in TIERS:
-        tier_data = TIERS[tier]
-        for profile in TIER_PROFILES[tier]:
-            for arc in ARCS:
-                is_arc_compatible = check_arc_compatible(tier, arc, tier_data) # should this be here or build prompt func?
+    lexicon = load_lexicon()
+    adjectives = lexicon["adjectives"]
+    nouns = lexicon["nouns"]
+    verbs = lexicon["verbs"]
 
-                if not is_arc_compatible:
-                    continue
-                
-                skill = None
-                skill_phase = None
-                phase_data = None
+    for _ in range(num_prompts):
+        gender = "girl"
+        for exposure in EXPOSURES.items():
+            print(exposure)
+            for location in exposure[1]["locations"]:
 
-                if arc["skill"]:
-                    skill = SKILLS[arc["skill"]]
-
-                    skill_phase = arc["skill_phase"]
-
-                    phases = skill["phases"]
-
-                    for phase in phases:
-                        if phase["phase"] == skill_phase:
-                            phase_data = phase
-
-                    # Validate skill compatibility
-                    is_compatible = check_capability_compatibility(
-                        phase_data,
-                        tier_data
-                    )
-
-                    if not is_compatible:
-                        continue
-
-
-                for location in arc["locations"]:
-                    name = get_name()
-                    result = build_prompt(tier_data, profile, arc, skill, phase_data, name, location)
-                    prompts.append(result)
-        return prompts
+                verb = random.choice(verbs)
+                noun = random.choice(nouns)
+                adjective = random.choice(adjectives)
+                name = get_name(gender)
+                features = sample_features(FEATURES)
+                tone_key = random.choice([k for k in TONES.keys() if k not in exposure[1]["banned_tones"]])     
+                result = build_prompt(name, gender, location, exposure, features, verb, noun, adjective, tone_key)
+                prompts.append(result)
+    return prompts
 
 
 if __name__ == "__main__":
     prompts = generate_prompts()
+
+    print(f"Generated {len(prompts)} prompts.")
 
     # Print example
     example = prompts[0]
     # print("METADATA:", example["metadata"])
     print("\nPROMPT:\n")
     print(example["prompt"])
+
+    # Save to file
+    save_prompts(prompts, 'generated_prompts.json')

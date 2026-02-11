@@ -23,6 +23,7 @@ FEATURES = {
     "twist_or_surprise": "include a twist or surprise",
     "positive_message": "include a positive message",
 }
+GENDERS = ['girl', 'boy']
 
 def sample_features(features: dict) -> dict:
     k = random.randint(0, min(3, len(features)))
@@ -44,9 +45,8 @@ def generate_prompts(
     verbs = lexicon["verbs"]
 
     for _ in range(num_prompts):
-        gender = "girl"
+        gender = random.choice(GENDERS)
         for exposure in EXPOSURES.items():
-            print(exposure)
             for location in exposure[1]["locations"]:
 
                 verb = random.choice(verbs)
@@ -65,11 +65,18 @@ if __name__ == "__main__":
 
     print(f"Generated {len(prompts)} prompts.")
 
-    # Print example
-    example = prompts[0]
-    # print("METADATA:", example["metadata"])
-    print("\nPROMPT:\n")
-    print(example["prompt"])
+    # # Print example
+    # example = prompts[0]
+    # # print("METADATA:", example["metadata"])
+    # print("\nPROMPT:\n")
+    # print(example["prompt"])
+
+    # print 5 random prompts
+    print("\nRANDOM PROMPTS:\n")
+    for _ in range(5):
+        random_prompt = random.choice(prompts)
+        print(random_prompt["prompt"])
+        print("\n---\n")
 
     # Save to file
     save_prompts(prompts, 'generated_prompts.json')

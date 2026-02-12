@@ -35,7 +35,7 @@ def save_prompts(prompts, output_path):
         json.dump(prompts, f, indent=2)
 
 def generate_prompts(
-        num_prompts=100
+        num_prompts=10000
 ):
     prompts = []
 
@@ -45,18 +45,18 @@ def generate_prompts(
     verbs = lexicon["verbs"]
 
     for _ in range(num_prompts):
+        exposure_key = random.choice(list(EXPOSURES.keys()))
+        exposure = EXPOSURES[exposure_key]
+        location = random.choice(exposure["locations"])
         gender = random.choice(GENDERS)
-        for exposure in EXPOSURES.items():
-            for location in exposure[1]["locations"]:
-
-                verb = random.choice(verbs)
-                noun = random.choice(nouns)
-                adjective = random.choice(adjectives)
-                name = get_name(gender)
-                features = sample_features(FEATURES)
-                tone_key = random.choice([k for k in TONES.keys() if k not in exposure[1]["banned_tones"]])     
-                result = build_prompt(name, gender, location, exposure, features, verb, noun, adjective, tone_key)
-                prompts.append(result)
+        verb = random.choice(verbs)
+        noun = random.choice(nouns)
+        adjective = random.choice(adjectives)
+        name = get_name(gender)
+        features = sample_features(FEATURES)
+        tone_key = random.choice([k for k in TONES.keys() if k not in exposure["banned_tones"]])     
+        result = build_prompt(name, gender, location, exposure, exposure_key, features, verb, noun, adjective, tone_key)
+        prompts.append(result)
     return prompts
 
 
@@ -70,6 +70,17 @@ if __name__ == "__main__":
     # # print("METADATA:", example["metadata"])
     # print("\nPROMPT:\n")
     # print(example["prompt"])
+
+    # # calculate average prompt length
+    # total_length = sum(len(p["prompt"]) for p in prompts)
+    # average_length = total_length / len(prompts)
+    # print(f"\nAverage prompt length: {average_length:.2f} characters.")
+
+    # # find the longest prompt
+    # longest_prompt = max(prompts, key=lambda p: len(p["prompt"]))
+    # print(f"\nLongest prompt length: {len(longest_prompt['prompt'])} characters.")
+    # print("\nLongest prompt:\n")
+    # print(longest_prompt["prompt"])
 
     # print 5 random prompts
     print("\nRANDOM PROMPTS:\n")

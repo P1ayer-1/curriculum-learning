@@ -1,4 +1,3 @@
-# would eventually be read from file. split by gender
 import csv
 import random
 
@@ -14,6 +13,8 @@ def load_names():
             elif gender == "boy":
                 names["boys"].append(name)
     return names
+
+
 NAMES = load_names()
 
 def get_name(gender):

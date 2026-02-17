@@ -2,7 +2,8 @@
 
 from prompt_builder import build_prompt
 from names import get_name
-from exposures import EXPOSURES, TONES
+from exposures import EXPOSURES
+from tones import TONES
 import random
 import json
 

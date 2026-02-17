@@ -9,7 +9,7 @@ import json
 
 
 def load_lexicon():
-    with open('D:\Tiny Models\Tiny Stories\lexicon.json') as f:
+    with open('lexicon.json') as f:
         lexicon = json.load(f)
     return lexicon
 

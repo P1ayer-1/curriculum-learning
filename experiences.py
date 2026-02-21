@@ -8,9 +8,16 @@ EXPERIENCES = {
         "experience_goal": "playing sports",
         "banned_tones": ["imaginative"],
         "locations": [
-            "at home", "at school", "during a car ride", "at the library",
-            "in a playroom", "at mealtime", "at the playground", "at daycare",
-            "at the store", "at grandparent's house"
+            "at a soccer field", "at a basketball court", "at a baseball field",
+            "at a tennis court", "at a swimming pool", "at a playground",
+            "at a park", "at a gymnasium", "at a sports complex",
+            "on a track", "at a skate park", "at a dance studio",
+            "at a martial arts dojo", "at a gymnastics center", "at a bowling alley",
+            "at a golf course", "at a volleyball court", "at a hockey rink",
+            "at a football field", "at a rugby pitch", "at a cricket ground",
+            "at a lacrosse field", "at a rowing club", "at a sailing club",
+            "at a climbing gym", "at a crossfit box", "at a yoga studio",
+            "at a ski resort", "on a street", "at a backyard", "at a schoolyard",
         ]
     },
     "playing_music": {
@@ -20,9 +27,10 @@ EXPERIENCES = {
         "experience_goal": "playing music",
         "banned_tones": ["imaginative"],
         "locations": [
-            "at home", "at school", "during a car ride", "at the library",
-            "in a playroom", "at mealtime", "at the playground", "at daycare",
-            "at the store", "at grandparent's house"
+            "at home", "at school", "at a music studio", "at a concert hall",
+            "at a recording studio", "at a music store", "at a band practice room",
+            "at a karaoke bar", "at a music festival", "on a street corner",
+            "in a car", "in the backyard", "in the living room"
         ]
     },
     "watching_sports": {
@@ -32,9 +40,9 @@ EXPERIENCES = {
         "experience_goal": "watching sports",
         "banned_tones": ["imaginative"],
         "locations": [
-            "at home", "at school", "during a car ride", "at the library",
-            "in a playroom", "at mealtime", "at the playground", "at daycare",
-            "at the store", "at grandparent's house"
+            "at home", "at school", "at a stadium", "at a sports arena",
+            "at grandparent's house", "at a friend's house", "at a community center",
+            "at a gymnasium", "at a sports complex"
         ]
     },
     "drawing_or_crafting": {
@@ -44,7 +52,7 @@ EXPERIENCES = {
         "experience_goal": "drawing or crafting",
         "banned_tones": ["imaginative"],
         "locations": [
-            "at home", "at school", "during a car ride", "at the library",
+            "at home", "at school", "at the library",
             "in a playroom", "at mealtime", "at the playground", "at daycare",
             "at the store", "at grandparent's house"
         ],

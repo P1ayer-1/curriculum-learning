@@ -5,9 +5,6 @@ from dataclasses import dataclass
 
 @dataclass
 class PromptConfig:
-    phase: str
-    tier: str
-    description: str
     name: str
     gender: str
     location: str
@@ -17,6 +14,8 @@ class PromptConfig:
     goal: str
     features: str
     tone: str
+    grade: int
+    age: int
     min_paragraphs: int
     max_paragraphs: int
 

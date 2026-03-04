@@ -10,7 +10,6 @@ from .content_type import ContentType
 class ContentTypeRegistry:
     def __init__(self, content_type_data: dict, allowed_content_types: list, rng: random.Random):
         self.allowed_content_types = allowed_content_types
-        print(allowed_content_types)
         self.registry = {}
         self.rng = rng
 

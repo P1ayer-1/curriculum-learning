@@ -19,7 +19,6 @@ tiers:
         weight: 0.35
       - paragraphs: 6
         weight: 0.10
-    lexicon_path: config/lexicons/tier_0.json
 
   - tier: 1
     grade: senior kindergarten
@@ -41,7 +40,6 @@ tiers:
         weight: 0.35
       - paragraphs: 6
         weight: 0.10
-    lexicon_path: config/lexicons/tier_1.json
 
   - tier: 2
     grade: 1st grade
@@ -65,7 +63,6 @@ tiers:
         weight: 0.35
       - paragraphs: 6
         weight: 0.10
-    lexicon_path: config/lexicons/tier_2.json
 
   - tier: 3
     grade: 2nd grade
@@ -89,7 +86,6 @@ tiers:
         weight: 0.35
       - paragraphs: 6
         weight: 0.10
-    lexicon_path: config/lexicons/tier_3.json
 
   - tier: 4
     grade: 3rd grade
@@ -113,7 +109,6 @@ tiers:
         weight: 0.35
       - paragraphs: 6
         weight: 0.10
-    lexicon_path: config/lexicons/tier_4.json
 
   - tier: 5
     grade: 4th grade
@@ -137,7 +132,6 @@ tiers:
         weight: 0.35
       - paragraphs: 6
         weight: 0.10
-    lexicon_path: config/lexicons/tier_5.json
 
   - tier: 6
     grade: 5th grade
@@ -161,7 +155,6 @@ tiers:
         weight: 0.35
       - paragraphs: 6
         weight: 0.10
-    lexicon_path: config/lexicons/tier_6.json
 
   - tier: 7
     grade: 6th grade
@@ -185,7 +178,6 @@ tiers:
         weight: 0.35
       - paragraphs: 6
         weight: 0.10
-    lexicon_path: config/lexicons/tier_7.json
 
   - tier: 8
     grade: 7th grade
@@ -209,7 +201,6 @@ tiers:
         weight: 0.35
       - paragraphs: 6
         weight: 0.10
-    lexicon_path: config/lexicons/tier_8.json
 
   - tier: 9
     grade: 8th grade
@@ -233,7 +224,6 @@ tiers:
         weight: 0.35
       - paragraphs: 6
         weight: 0.10
-    lexicon_path: config/lexicons/tier_9.json
 
   - tier: 10
     grade: 9th grade
@@ -257,7 +247,6 @@ tiers:
         weight: 0.35
       - paragraphs: 6
         weight: 0.10
-    lexicon_path: config/lexicons/tier_10.json
 
   - tier: 11
     grade: 10th grade
@@ -281,7 +270,6 @@ tiers:
         weight: 0.35
       - paragraphs: 6
         weight: 0.10
-    lexicon_path: config/lexicons/tier_11.json
 
   - tier: 12
     grade: 11th grade
@@ -305,7 +293,6 @@ tiers:
         weight: 0.35
       - paragraphs: 6
         weight: 0.10
-    lexicon_path: config/lexicons/tier_12.json
 
   - tier: 13
     grade: 12th grade
@@ -329,4 +316,3 @@ tiers:
         weight: 0.35
       - paragraphs: 6
         weight: 0.10
-    lexicon_path: config/lexicons/tier_13.json

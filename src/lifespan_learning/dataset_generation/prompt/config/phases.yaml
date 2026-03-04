@@ -9,6 +9,7 @@ phases:
       focused on surface features, and limited to single-step causal chains.
       Rules are followed procedurally rather than conceptually. No reliable
       coordination of multiple constraints.
+    lexicon_path: config/lexicons/phase_0.json
 
   - id: 1
     name: "Stable Rule-Based Reasoning"
@@ -19,7 +20,7 @@ phases:
       can perform short reversible operations and maintain simple
       multi-step sequences within one constraint. Reasoning remains
       concrete and breaks under multi-rule coordination.
-
+    lexicon_path: config/lexicons/phase_1.json
   - id: 2
     name: "Relational System Coordination"
     dominant_grades: "3–5"
@@ -29,6 +30,7 @@ phases:
       Learners track interacting constraints, understand nested categories,
       and engage in early proportional reasoning. Reasoning is relational
       but still grounded in concrete referents.
+    lexicon_path: config/lexicons/phase_2.json
 
   - id: 3
     name: "Abstract Variable Reasoning"

@@ -41,7 +41,7 @@ experiences:
 
   - key: playing_music
     min_tier: 1
-    max_tier: 6
+    max_tier: 13
     description: playing music
     goal: playing music
     banned_tones:
@@ -63,7 +63,7 @@ experiences:
 
   - key: watching_sports
     min_tier: 0
-    max_tier: 6
+    max_tier: 13
     description: watching sports
     goal: watching sports
     banned_tones:
@@ -81,7 +81,7 @@ experiences:
 
   - key: drawing_or_crafting
     min_tier: 1
-    max_tier: 6
+    max_tier: 13
     description: drawing or crafting
     goal: drawing or crafting
     banned_tones:
@@ -99,7 +99,7 @@ experiences:
 
   - key: cooking_or_baking
     min_tier: 1
-    max_tier: 6
+    max_tier: 13
     description: cooking or baking
     goal: cooking or baking
     banned_tones:
@@ -118,7 +118,7 @@ experiences:
 
   - key: religious_or_cultural_events
     min_tier: 0
-    max_tier: 6
+    max_tier: 13
     description: attending religious or cultural events
     goal: attending religious or cultural events
     banned_tones:
@@ -144,3 +144,31 @@ experiences:
       - imaginative
     locations:
       - at school
+
+  - key: first_date 
+    min_tier: 7
+    max_tier: 13
+    description: experiencing the first date
+    goal: going on a first date
+    banned_tones:
+      - imaginative
+    locations:
+      - at the movies
+      - at a restaurant
+      - at a park
+      - at a carnival
+      - at a beach
+      - at a zoo
+      - at a museum
+      - at a concert
+      - at a sports game
+      - at a coffee shop
+      - at a bowling alley
+      - at a mini golf course
+      - at an arcade
+      - at a fair
+      - at a festival
+      - at a picnic
+      - at a hiking trail
+      - at a rooftop
+      - at a rock climbing gym

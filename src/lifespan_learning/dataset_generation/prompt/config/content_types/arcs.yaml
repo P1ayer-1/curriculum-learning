@@ -53,6 +53,55 @@ arcs:
       - imaginative
 
 
+  - key: learning_to_code
+    description: learning to code
+
+    arcs:
+      basic_learning:
+        min_tier: 10
+        max_tier: 13
+        goal: basic coding concepts such as learning to write simple programs, learning to use basic programming syntax, or learning to debug simple code
+      advanced_learning:
+        min_tier: 10
+        max_tier: 13
+        goal: more complex coding concepts such as learning to write more complex programs, learning to use more advanced programming syntax, or learning to debug more complex code
+
+    shared_locations:
+      - at home
+      - at school
+      - at grandparent's house
+      - at a friend's house
+      - at a community center
+      - at a coding bootcamp
+      
+
+    shared_banned_tones:
+      - imaginative
+    
+  - key: learning_cooking
+    description: learning to cook
+
+    arcs:
+      basic_learning:
+        min_tier: 4
+        max_tier: 8
+        goal: basic cooking skills such as learning to follow a simple recipe, learning to use basic kitchen tools, or learning to cook simple meals
+      advanced_learning:
+        min_tier: 6
+        max_tier: 13
+        goal: more complex cooking skills such as learning to create more complex recipes, learning to use more advanced kitchen tools, or learning to cook more complex meals
+
+    shared_locations:
+      - at home
+      - at school
+      - at grandparent's house
+      - at a friend's house
+      - at a community center
+      - at a cooking class
+
+    shared_banned_tones:
+      - imaginative
+
   - key: learning_religious_or_cultural_practices
     description: learning religious or cultural practices
 
@@ -62,8 +111,8 @@ arcs:
         max_tier: 3
         goal: basic religious or cultural practices such as learning to say a prayer, learning to do a cultural dance, or learning to celebrate a religious holiday
       advanced_learning:
-        min_tier: 1
-        max_tier: 6
+        min_tier: 2
+        max_tier: 13
         goal: more complex religious or cultural practices such as learning to do a religious ceremony, learning to do a cultural ritual, or learning to celebrate a religious or cultural holiday
 
     shared_locations:
@@ -77,3 +126,47 @@ arcs:
 
     shared_banned_tones:
       - imaginative
+
+  - key: learning_art
+    description: learning art
+
+    arcs:
+      basic_learning:
+        min_tier: 0
+        max_tier: 3
+        goal: basic art concepts such as learning to draw simple shapes, learning to use basic art materials, or learning to create simple art projects
+      advanced_learning:
+        min_tier: 1
+        max_tier: 13
+        goal: more complex art concepts such as learning to draw more complex shapes, learning to use more advanced art materials, or learning to create more complex art projects
+
+    shared_locations:
+      - at home
+      - at school
+      - at grandparent's house
+      - at a friend's house
+      - at a community center
+      - at an art class
+
+  - key: learning_physics
+    description: learning physics
+
+    arcs:
+      basic_learning:
+        min_tier: 4
+        max_tier: 8
+        goal: basic physics concepts such as learning about gravity, learning about motion, or learning about energy
+      advanced_learning:
+        min_tier: 6
+        max_tier: 13
+        goal: more complex physics concepts such as learning about quantum mechanics, learning about relativity, or learning about astrophysics
+
+    shared_locations:
+      - at home
+      - at school
+      - at a friend's house
+      - at a science museum
+
+    shared_banned_tones:
+      - imaginative
+

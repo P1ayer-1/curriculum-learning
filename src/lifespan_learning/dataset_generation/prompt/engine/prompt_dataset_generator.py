@@ -1,3 +1,4 @@
+import json
 import random
 
 from ..config_loader import load_list, load_json 
@@ -39,3 +40,10 @@ class PromptDatasetGenerator:
             all_prompts.extend(phase_prompts)
 
         return all_prompts
+    
+
+    def save_prompts(self, prompts: list[dict], filename: str):
+        """Save generated prompts and metadata to a jsonl file"""
+        with open(filename, "w") as f:
+            for prompt in prompts:
+                f.write(json.dumps(prompt) + "\n")

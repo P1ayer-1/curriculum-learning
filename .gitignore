@@ -207,4 +207,4 @@ marimo/_lsp/
 __marimo__/
 
 # project-specific ignores
-generated_prompts.json
+generated_prompts.jsonl

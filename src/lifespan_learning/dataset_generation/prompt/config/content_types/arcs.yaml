@@ -1,4 +1,30 @@
 arcs:
+
+  - key: learning_hygiene
+    description: learning hygiene
+
+    arcs:
+      basic_learning:
+        min_tier: 0
+        max_tier: 5
+        goal: basic hygiene concepts such as learning to brush teeth, learning to wash hands, or learning to take a bath
+
+      advanced_learning:
+        min_tier: 6
+        max_tier: 13
+        goal: more complex hygiene concepts such as learning to maintain good personal hygiene, learning to use hygiene products effectively, or learning to follow proper hygiene practices
+
+    shared_locations:
+      - at home
+      - at school
+      - at grandparent's house
+      - at a friend's house
+      - at a community center
+      - at a music store
+      - at a band practice room
+
+    shared_banned_tones:
+      - imaginative
   - key: learning_music
     description: learning music
 
@@ -154,10 +180,10 @@ arcs:
     arcs:
       basic_learning:
         min_tier: 4
-        max_tier: 8
+        max_tier: 9
         goal: basic physics concepts such as learning about gravity, learning about motion, or learning about energy
       advanced_learning:
-        min_tier: 6
+        min_tier: 10
         max_tier: 13
         goal: more complex physics concepts such as learning about quantum mechanics, learning about relativity, or learning about astrophysics
 
@@ -170,3 +196,69 @@ arcs:
     shared_banned_tones:
       - imaginative
 
+  - key: learning_chemistry
+    description: learning chemistry
+
+    arcs:
+      basic_learning:
+        min_tier: 4
+        max_tier: 9
+        goal: basic chemistry concepts such as learning about atoms, learning about molecules, or learning about chemical reactions
+      advanced_learning:
+        min_tier: 10
+        max_tier: 13
+        goal: more complex chemistry concepts such as learning about organic chemistry, learning about biochemistry, or learning about physical chemistry
+
+    shared_locations:
+      - at home
+      - at school
+      - at a friend's house
+      - at a science museum
+
+    shared_banned_tones:
+      - imaginative
+    
+
+  - key: learning_biology
+    description: learning biology
+
+    arcs:
+      basic_learning:
+        min_tier: 4
+        max_tier: 9
+        goal: basic biology concepts such as learning about cells, learning about organisms, or learning about ecosystems
+      advanced_learning:
+        min_tier: 10
+        max_tier: 13
+        goal: more complex biology concepts such as learning about genetics, learning about evolution, or learning about ecology
+
+    shared_locations:
+      - at home
+      - at school
+      - at a friend's house
+      - at a science museum
+
+    shared_banned_tones:
+      - imaginative
+
+  - key: learning_history
+    description: learning history
+
+    arcs:
+      basic_learning:
+        min_tier: 3
+        max_tier: 6
+        goal: basic history concepts such as learning about historical events, learning about historical figures, or learning about historical time periods
+      advanced_learning:
+        min_tier: 7
+        max_tier: 13
+        goal: more complex history concepts such as learning about historical causes and effects, learning about historical interpretations, or learning about historical debates
+
+    shared_locations:
+      - at home
+      - at school
+      - at a friend's house
+      - at a museum
+
+    shared_banned_tones:
+      - imaginative

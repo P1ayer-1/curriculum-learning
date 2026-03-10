@@ -12,7 +12,7 @@ tiers:
       Play-based learning focused on socialization, emotional regulation,
       language exposure, and foundational motor development.
     age_range: [3, 5]
-    paragraph_distribution:
+    paragraph_distribution: # should I move to phases?
       - paragraphs: 4
         weight: 0.55
       - paragraphs: 5
@@ -45,11 +45,11 @@ tiers:
     grade: 1st grade
     content_types:
       - content_type: exposures
-        weight: 0.3
+        weight: 0.2
       - content_type: experiences
         weight: 0.3
       - content_type: basic_learning
-        weight: 0.3
+        weight: 0.4
       - content_type: advanced_learning
         weight: 0.1
     description: >
@@ -298,11 +298,11 @@ tiers:
     grade: 12th grade
     content_types:
       - content_type: exposures
-        weight: 0.3
+        weight: 0.1
       - content_type: experiences
         weight: 0.3
       - content_type: basic_learning
-        weight: 0.3
+        weight: 0.5
       - content_type: advanced_learning
         weight: 0.1
     description: >
@@ -310,9 +310,9 @@ tiers:
       and transition planning for post-secondary education or workforce entry.
     age_range: [16, 18]
     paragraph_distribution:
-      - paragraphs: 4
+      - paragraphs: 15
         weight: 0.55
-      - paragraphs: 5
+      - paragraphs: 18
         weight: 0.35
-      - paragraphs: 6
+      - paragraphs: 20
         weight: 0.10
